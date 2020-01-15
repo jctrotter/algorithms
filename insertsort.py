@@ -47,12 +47,12 @@ for line in lines:
         array.append(int(temp_num))
     
     first_skipped = False
-    print("Given array is") 
+    print("init array") 
     for i in range(master_n): 
         print(array[i], " ", end='')
     print()
     insertsort(array)
-    print("Sorted array is") 
+    print("sorted array") 
     for i in range(master_n): 
         print(array[i], " ", end='')
         file.write(str(array[i]))
