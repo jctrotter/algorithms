@@ -60,12 +60,17 @@ for line in lines:
                     temp_num = ""
         else:
             first_skipped = True
-
+        
+    if not temp_num == "":
+        array.append(int(temp_num))
+    
     first_skipped = False
-    print ("Given array is") 
+    print("Given array is") 
     for i in range(master_n): 
-        print ("%d" %array[i])
+        print(array[i], " ", end='')
+    print()
     mergesort(array)
-    print ("\n\nSorted array is") 
-    for i in range(n): 
-        print ("%d" %arr[i])
+    print("Sorted array is") 
+    for i in range(master_n): 
+        print(array[i], " ", end='')
+    print("\n")
