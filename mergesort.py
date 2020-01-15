@@ -1,33 +1,31 @@
 
 def merge(array, left, right):
-    i = 0
-    j = 0
-    k = 0
+       i = 0
+       j = 0
+       k = 0
 
-    while (i < len(left) and j < len(right)):
-        if(left[i]<right[j]):
-            array[k] = left[i]
-            i = i+1
-        else:
-            array[k] = right[j]
-            j = j+1
-        
-        k = k+1
-    
-    while (i < len(left)):
-        array[k] = left[i]
-        i = i+1
-        k = k+1
-    
-    while (i < len(right)):
-        array[k] = right[j]
-        j = j+1
-        k = k+1
+       while i < len(left) and j < len(right):
+           if left[i] < right[j]:
+               array[k] = left[i]
+               i = i + 1
+           else:
+               array[k] = right[j]
+               j = j + 1
+           k = k + 1
 
+       while i < len(left):
+           array[k] = left[i]
+           i = i + 1
+           k = k + 1
+
+       while j < len(right):
+           array[k] = right[j]
+           j = j + 1
+           k = k + 1
 
 def mergesort(array):
     n = len(array)
-    if (n<2):
+    if (n < 2):
         return
     
     mid = int(n/2)
@@ -45,6 +43,8 @@ def mergesort(array):
 
 file = open("data.txt", "r")
 lines = file.readlines()
+file.close()
+file = open("merge.txt", "w")
 for line in lines:
     master_n = int(line[0])
     array = []
@@ -73,4 +73,8 @@ for line in lines:
     print("Sorted array is") 
     for i in range(master_n): 
         print(array[i], " ", end='')
+        file.write(str(array[i]))
+        file.write(' ')
+    file.write("\n")
     print("\n")
+file.close()
