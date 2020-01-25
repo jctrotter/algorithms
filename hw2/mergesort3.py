@@ -115,10 +115,10 @@ def mergesort3(array):
 
 
 
-file = open("./hw2/data.txt", "r")
+file = open("data.txt", "r")
 lines = file.readlines()
 file.close()
-file = open("./hw2/merge3.txt", "w")
+file = open("merge3.txt", "w")
 for line in lines:
     master_n = ""
     lineptr = 0
