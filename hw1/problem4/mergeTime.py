@@ -47,8 +47,8 @@ def mergesort(array):
 # required file io
 nvals = [50000, 100000, 150000, 200000, 250000, 300000, 350000, 400000, 450000, 500000]
 for n in nvals:
+    array = [] 
     for i in range(0, n):
-        array = []    
         array.append(random.uniform(0, 10000))
     start = time.time()
     mergesort(array)
