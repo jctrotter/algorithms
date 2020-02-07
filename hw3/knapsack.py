@@ -36,7 +36,7 @@ def dynamic(W, n, wt, val):
   
     return A[n][W] 
   
-init_ns = [5,6,7,8,9,10,11,12]
+init_ns = [3,6,9,12,15,18,21,24]
 init_W = 100
 
 wt = []
