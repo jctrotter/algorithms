@@ -36,29 +36,29 @@ def dynamic(W, n, wt, val):
   
     return A[n][W] 
   
-init_ns = [3,6,9,12,15,18,21,24]
-init_W = 100
+init_n = [24,24,24,24,24,24,24,24]
+init_W = [6,9,12,15,18,21,24,27]
 
 wt = []
 val = []
-for init_n in init_ns:
+for x in range(0,len(init_n)):
     wt = []
     val = []
-    for x in range(0, init_n):
+    for z in range(0, init_n[x]):
         wt.append(int(random.uniform(0,50)))
-    for y in range(0, init_n):
+    for y in range(0, init_n[x]):
         tval = int(random.uniform(0,50))
         if tval < wt[y]:
             tval = tval + 1
         val.append(tval)
 
     d_start = time.time()
-    d_value = dynamic(init_W, init_n, wt, val)
+    d_value = dynamic(init_W[x], init_n[x], wt, val)
     d_end = time.time()
     d_time = round(d_end-d_start, 4)
 
     r_start = time.time()
-    r_value = recursive(init_W, init_n, wt, val)
+    r_value = recursive(init_W[x], init_n[x], wt, val)
     r_end = time.time()
     r_time = round(r_end-r_start, 4) 
-    print("n:",init_n, ", W:", init_W, ", r_time:", r_time, ", r_max:", r_value, ", d_time:", d_time, " , d_max:", d_value)
+    print("n:",init_n[x], ", W:", init_W[x], ", r_time:", r_time, ", r_max:", r_value, ", d_time:", d_time, " , d_max:", d_value)
