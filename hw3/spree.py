@@ -5,7 +5,7 @@ def dynamic_spree(fam, usd, lbs):
     fam_totals = []
     z = 0
     running_fam_sum = 0
-    for S in fam:
+    for S in fam: # S for strength
         z = z+1
         A = [[0 for x in range(S+1)] for x in range(n+1)]
         holding = []
@@ -23,7 +23,7 @@ def dynamic_spree(fam, usd, lbs):
         k = S
         #try:
         while not p <= 0 and not k <= 0:
-            if not A[p][k] == A[p-1][k]: # TODO - take another look at this
+            if not A[p][k] == A[p-1][k]: # TODO - take another look at this  1
                 holding.append(p)
                 p = p - 1
                 k = k - lbs[i-1]
